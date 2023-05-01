@@ -33,6 +33,14 @@ export function User() {
   }
 
   function updateUser() {
+    const { name, age, sex } = data
+    const hasEmptyValues = !name || !age || !sex
+
+    if (hasEmptyValues) {
+      alert('Fill all fields')
+      return
+    }
+
     setIsLoading(true)
 
     api
